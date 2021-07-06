@@ -1,0 +1,203 @@
+/* var totalTime = 10
+var currentTime = totalTime
+var firstTap = true
+var timer = null
+
+function startTimer() {
+    if (firstTap == true){
+        firstTap = false
+        timer = setInterval(function(){
+            currentTime--
+            document.getElementById("seconds").innerHTML = ( " Time: " + currentTime);
+            if (currentTime < 0){
+                currentTime = totalTime
+                document.getElementById("seconds").innerHTML = (" Time: " + currentTime);
+                clearInterval(timer);
+                alert("Time is up");
+                firstTap = true
+            }
+        }, 1000)
+    }
+};
+//HTML FOR TIMER
+//<div class="counter col-1" id="counter">
+//<span id="seconds"></span>
+//</div>
+
+//questions array
+/* var questions= [
+    {
+            question: "When referencing a style sheet on your HTML page which attribute do you use?",
+            answers: {
+            a: "alt=",
+            b: "href=",
+            c: "url()",
+            d: "style=",
+        },
+            correctAnswer: "b"
+    },
+
+    {
+            question: "When referencing a style sheet on your HTML page which attribute do you use?",
+            answers: {
+            a: "alt=",
+            b: "href=",
+            c: "url()",
+            d: "style=",
+        },
+            correctAnswer: "b"
+    },
+
+
+]; */
+
+//jquery script
+//    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+//bootstrap script
+//<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">  
+
+
+var body = document.body;
+
+// timer variables
+var totalTime = 10
+var currentTime = totalTime
+var firstTap = true
+var timerDisplay = document.getElementById("seconds");
+timerDisplay.setAttribute('style', 'display: flex; flex-direction: row; flex:auto; color: red;');
+
+function startTimer() {
+    if (firstTap == true){
+        firstTap = false
+        timer = setInterval(function(){
+            currentTime--
+            document.getElementById("seconds").innerHTML = ( " Time: " + currentTime);
+            if (currentTime < 0){
+                currentTime = totalTime
+                document.getElementById("seconds").innerHTML = (" Time: " + currentTime);
+                clearInterval(timer);
+                alert("Time is up");
+                firstTap = true
+            }
+        }, 1000)
+    }
+};
+
+//Create a Lobby Page that displays the rules of the quiz and how to earn points, containing a start button to start the quiz
+// function displayLobby 
+
+
+//     var h1El = document.createElement('h1');
+//     h1El.setAttribute('id', 'lobby');
+//     h1El.textContent = "Coding Quiz";
+//     var pEl = document.createElement('p');
+//     pEl.textContent = "This is a 10 question coding quiz. You have 60 seconds to complete the quiz. You will recieve points based off of the amount of correct answers that you provide. Press Start to begin!";
+
+//     h1El.setAttribute('style', 'margin:auto; width:50%; text-align:center; justify-content: center; display: flex; flex-direction: column; padding-top:250px;');
+//     body.appendChild(h1El);
+//     h1El.appendChild(pEl);
+
+//     //"This is a 10 question coding quiz. You have 60 seconds to complete the quiz. You will recieve points based off of the amount of correct answers that you provide. Press Start to begin!";
+
+
+//     var startBtn = document.createElement("button");
+//     startBtn.textContent = "Start";
+//     startBtn.setAttribute('style', 'margin: auto; display: flex; flex-direction: column; text-align:center; justify-content:center; height: 50px; width: 150px; padding:0 15px 6px 60px; background-color: rgb(177, 13, 177); border-radius: 47%;');
+//     startBtn.addEventListener('click', startTimer, startQuiz);
+//     body.appendChild(startBtn);
+
+// Start the quiz by presenting the first question after the start button is clicked
+
+function startQuiz () {
+    document.getElementById('lobby').style.visibility = 'none';
+}
+
+// previous code 
+var body = document.querySelector('body');
+
+// Create Lobby Page
+function displayLobby () {
+    //lobby page 
+    var h1El = document.createElement('h1');
+    h1El.setAttribute('id', 'lobby');    
+    h1El.textContent = "Coding Quiz";
+    var pEl = document.createElement('p');
+    pEl.textContent = "This is a 10 question coding quiz. You have 60 seconds to complete the quiz. You will recieve points based off of the amount of correct answers that you provide. Press Start to begin!";
+    h1El.appendChild(pEl);
+    body.appendChild(h1El);
+
+    //start button
+    var startBtn = document.createElement("button");
+    startBtn.textContent = "Start";
+    startBtn.setAttribute('style', 'margin: auto; display: flex; flex-direction: column; text-align:center; justify-content:center; height: 50px; width: 150px; padding:0 15px 6px 60px; background-color: rgb(177, 13, 177); border-radius: 47%;');
+    startBtn.addEventListener('click', startTimer, startQuiz);
+    body.appendChild(startBtn);
+
+};
+
+displayLobby();
+
+function startTimer() {
+
+        // timer variables
+    var totalTime = 10
+    var currentTime = totalTime
+    var firstTap = true
+    var timerDisplay = document.getElementById("seconds");
+    timerDisplay.setAttribute('style', 'display: flex; flex-direction: row; flex:auto; color: red;');
+
+    if (firstTap == true){
+        firstTap = false
+        timer = setInterval(function(){
+            currentTime--
+            document.getElementById("seconds").innerHTML = ( " Time: " + currentTime);
+            if (currentTime < 0){
+                currentTime = totalTime
+                document.getElementById("seconds").innerHTML = (" Time: " + currentTime);
+                clearInterval(timer);
+                alert("Time is up");
+                firstTap = true
+            }
+        }, 1000)
+    }
+};
+
+function startQuiz () {
+    //hide lobby
+
+    //questions array
+    var questions= [
+        {
+                question: "When referencing a style sheet on your HTML page which attribute do you use?",
+                answers: {
+                a: "alt=",
+                b: "href=",
+                c: "url()",
+                d: "style=",
+            },
+                correctAnswer: "b"
+        },
+    
+        {
+                question: "When referencing a style sheet on your HTML page which attribute do you use?",
+                answers: {
+                a: "alt=",
+                b: "href=",
+                c: "url()",
+                d: "style=",
+            },
+                correctAnswer: "b"
+        },
+    
+    
+    ]; 
+    //create questions display
+    var questionDisplay = document.createElement('section');
+    var question = questions.question;
+    var answers = questions.answers;
+    var correctAnswer = questions.correctAnswer;
+    questionDisplay.appendChild(question);
+    body.appendChild(questionDisplay);
+
+    questionDisplay.appendChild(question, answers);
+};
